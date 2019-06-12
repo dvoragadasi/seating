@@ -1,0 +1,21 @@
+<form [formGroup]="roomConfig" clrForm (ngSubmit)="save()" autocomplete="off">
+  <clr-input-container>
+    <label>Room name: </label>
+    <input clrInput formControlName="roomName">
+    <clr-control-error>Required</clr-control-error>
+  </clr-input-container>
+  <clr-input-container>
+    <label>Number of rows:</label>
+    <input clrInput type="number" formControlName="rowCount">
+    <clr-control-error>Must be 1 or more</clr-control-error>
+  </clr-input-container>
+  <clr-input-container>
+    <label>Average number of seats per row:</label>
+    <input clrInput type="number" formControlName="avgSeatsInRow">
+    <clr-control-error>Must be 1 or more</clr-control-error>
+  </clr-input-container>
+  <button type="submit" class="btn btn-primary btn-icon" [disabled]="!roomConfig.valid">
+    <clr-icon shape="check"></clr-icon>
+    Save Room
+  </button>
+</form>
